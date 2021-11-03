@@ -36,6 +36,9 @@ playBtn.addEventListener('click', () => {
             squareNumber = 49;
             squarePerSide = 7;
     }
+
+        // Generating bombs
+        const bombList = generateBombs(squareNumber, 16);
         // Set grid with element html
 
         const grid = document.createElement('div');
@@ -58,6 +61,8 @@ playBtn.addEventListener('click', () => {
         }
 
 })
+
+
 
 // Functions - Generate a random number
 function randomNumber (min, max) {
