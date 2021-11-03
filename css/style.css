@@ -85,6 +85,20 @@ main {
     color: white;
 }
 
+square.safe,
+square.bomb {
+    color: white;
+}
+
+.square.safe {
+    background: lightblue;
+}
+
+.square.bomb {
+    background: lightcoral;
+}
+
+
 /* Footer */
 footer {
     background-color: white;
