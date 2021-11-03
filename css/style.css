@@ -17,6 +17,13 @@ body {
     text-align: center;
 }
 
+.win-lose-style {
+    padding: 1rem 0;
+    font-size: 1rem;
+    font-weight: 600;
+
+}
+
 .py-3 {
     padding-top: 3rem;
 }

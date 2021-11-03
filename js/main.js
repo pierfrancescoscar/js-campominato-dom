@@ -158,4 +158,21 @@ function endGame(bombList, attempts, maxAttempts) {
         squares[i].classList.add('bomb');
     }
         
-}}
+    }
+    // Winning message end game
+    let message = `Congrats, you won! You guessed with ${maxAttempts} valid chances. If you want, play again :)`
+    // In case you're a loser
+    if (attempts.length < maxAttempts) {
+        message = `You lose :( You played with ${attempts.length} chances. Play again if you want.`
+    }
+
+    // Message HTML element
+    const messageEl = document.createElement('div');
+    messageEl.classList.add('t-center', 'win-lose-style');
+    messageEl.append(message);
+    document.querySelector('.wrap-grid').append(messageEl);
+
+    // Disable all pointer events
+    document.querySelector('.square').classList.add('end-game');
+
+}
