@@ -61,14 +61,15 @@ playBtn.addEventListener('click', () => {
         // Gen grid square
 
         for (let i = 1; i <= squareNumber; i++) {
-            const squareList = i;
-            const square = createGridSquare(squareList, squarePerSide);
-            grid.append(square);
+            // Generate a single square (from his function)
+            const square = createGridSquare(i, squarePerSide);
+            
             // Gen click event to square
             square.addEventListener('click', () => {
                 // Click event with apposite function made by us
                 squareClick(square, bombList, attempts, maxAttempts);
             })
+            grid.append(square);
         }
 
 })
@@ -121,7 +122,24 @@ function generateBombs(totCells, totBombs) {
 //  Functions - Events on clicking our squares
 
 function squareClick(square, bombList, attempts, maxAttempts) {
-
+    // Get square number into him
+    const number = parseInt(square.innerHTML);
+    console.log(number);
+    
+    // Have you hitted the bomb? --- Is not a bomb and is not a number previously clicked
+    if (bombList.includes(number)) {
+        console.log('Hitted bomb!');
+    } else if (!attempts.includes(number)) {
+        // Add a different bg-color to the square
+        square.classList.add('safe');
+        // Add a number to the attempts' list
+        attempts.push(number);
+        console.log('Accomplished attempts: ', attempts);
+        // Check if attempts numbers is equal to the maximum possible attempts
+        if (attempts.length === maxAttempts) {
+            console.log('You won!');
+        }
+    }
 }
 
 
