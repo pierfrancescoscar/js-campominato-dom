@@ -1,0 +1,98 @@
+/* General Settings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+header {
+    display: flex;
+    width: 100%;
+    background-color: white;
+    padding: 15px;
+}
+
+header .left-header {
+    display: flex;
+    align-items: center;
+    width: 50%;
+}
+
+.left-header img {
+    width: 50px;
+    margin-right: 15px;
+}
+
+.right-header {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: flex-end;
+    width: 50%;
+}
+
+label {
+    margin-right: 15px;
+}
+
+#difficoltà {
+    padding-right: 90px;
+    margin-right: 15px;
+}
+
+.play {
+    padding: 0px 20px;
+}
+
+/* Main */
+
+main {
+    flex-grow: 1;
+    background-color: goldenrod;
+}
+
+/* Grid */
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    width: 500px;
+    height: 500px;
+    margin: 50px auto;
+    border: 2px solid black;
+}
+
+/* Square */
+.square {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    cursor: pointer;
+}
+
+.square.clicked {
+    background: dodgerblue;
+    color: white;
+}
+
+/* Footer */
+footer {
+    background-color: white;
+    display: flex;
+    align-content: flex-end;
+    font-size: 14px;
+    padding: 15px;
+}
+
+
+
