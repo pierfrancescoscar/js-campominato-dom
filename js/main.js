@@ -123,7 +123,9 @@ function generateBombs(totCells, totBombs) {
 
 function squareClick(square, bombList, attempts, maxAttempts) {
     // Get square number into him
-    const number = parseInt(square.innerHTML);
+    
+    const span = square.querySelector('span');
+    const number = parseInt(span.innerHTML);
     console.log(number);
     
     // Have you hitted the bomb? --- Is not a bomb and is not a number previously clicked
