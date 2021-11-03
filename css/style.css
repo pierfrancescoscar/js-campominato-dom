@@ -17,6 +17,10 @@ body {
     text-align: center;
 }
 
+.py-3 {
+    padding-top: 3rem;
+}
+
 /* Header */
 header {
     display: flex;
@@ -100,6 +104,10 @@ square.bomb {
 
 .square.bomb {
     background: red;
+}
+
+.end-game {
+    pointer-events: none;
 }
 
 
