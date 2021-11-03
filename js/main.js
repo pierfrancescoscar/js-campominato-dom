@@ -143,4 +143,24 @@ function squareClick(square, bombList, attempts, maxAttempts) {
 }
 
 
+// Functions - End game logic
 
+function endGame (bombList, attempts, maxAttempts) {
+    // Get the total square number
+    const squares = document.querySelectorAll('.square');
+    // Show all the bombs
+    for (let i = 0; i < squares.length; i++) {
+        const square = squares[i];
+        const squareValue  = parseInt(square.innerHTML);
+
+        if (bombList.includes(squareValue)) {
+        square.classList.add('bomb');
+        }
+    }
+    // Text end game message (if you are the winner)
+    let endingMessage = `You won! You guessed the ${maxAttempts} valid attempts. Play again, if you want :)`
+    // If you are a loser, intstead...
+    if (attempts.length < maxAttempts) {
+        endingMessage = 'You lose.'
+    }
+}

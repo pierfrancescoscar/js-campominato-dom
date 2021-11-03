@@ -13,6 +13,10 @@ body {
     flex-direction: column;
 }
 
+.t-center {
+    text-align: center;
+}
+
 /* Header */
 header {
     display: flex;
