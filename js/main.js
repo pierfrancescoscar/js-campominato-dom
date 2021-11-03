@@ -14,8 +14,6 @@ const playBtn = document.querySelector('.play');
 const chooseLevel = document.getElementById('difficoltà');
 const wrapGrid = document.querySelector('.wrap-grid');
 
-
-
 // Set grid
 playBtn.addEventListener('click', () => {
     // Reset content
@@ -61,7 +59,12 @@ playBtn.addEventListener('click', () => {
 
 })
 
-// Functions
+// Functions - Generate a random number
+function randomNumber (min, max) {
+    return Math.floor( Math.random() * (max - min + 1) ) + min;
+}
+
+// Functions - Creating squares for our grid
 
 function createGridSquare(num, squares) {
 
@@ -79,6 +82,23 @@ function createGridSquare(num, squares) {
     node.append(span);
 
     return node;
+}
+
+// Functions - Generating bomb list
+
+function generateBombs(totCells, totBombs) {
+    // 16 random numbers without double usability
+    const bombs = [];
+
+    // Loop
+    while (bombs.lenght < totBombs) {   
+    // Generating a random number
+    const bomb = randomNumber(1, totCells);
+    // Checking if the number isn't unique and not in the bomb list
+    if (!bombs.includes(bomb)) {
+        bombs.push(bomb);
+    }
+    }
 }
 
 
