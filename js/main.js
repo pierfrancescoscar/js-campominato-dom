@@ -1,3 +1,4 @@
+
 // L’utente indica un livello di difficoltà in base al quale viene generata una griglia di gioco quadrata, in cui ogni cella contiene un numero tra quelli compresi in un range:
 // con difficoltà 1 => tra 1 e 100
 // con difficoltà 2 => tra 1 e 81
@@ -38,7 +39,16 @@ playBtn.addEventListener('click', () => {
     }
 
         // Generating bombs
+
         const bombList = generateBombs(squareNumber, 16);
+        console.log('Generated bombs: ', bombList);
+
+        // Creating attempts list
+
+        const attempts = [];
+        const maxAttempts = squareNumber - bombList.length;
+        console.log('Possible attempts: ', maxAttempts);
+
         // Set grid with element html
 
         const grid = document.createElement('div');
@@ -96,7 +106,7 @@ function generateBombs(totCells, totBombs) {
     const bombs = [];
 
     // Loop
-    while (bombs.lenght < totBombs) {   
+    while (bombs.length < totBombs) {   
     // Generating a random number
     const bomb = randomNumber(1, totCells);
     // Checking if the number isn't unique and not in the bomb list
@@ -104,6 +114,7 @@ function generateBombs(totCells, totBombs) {
         bombs.push(bomb);
     }
     }
+    return bombs;
 }
 
 
