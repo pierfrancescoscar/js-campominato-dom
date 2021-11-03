@@ -130,6 +130,7 @@ function squareClick(square, bombList, attempts, maxAttempts) {
     
     // Have you hitted the bomb? --- Is not a bomb and is not a number previously clicked
     if (bombList.includes(number)) {
+        square.classList.add('bomb');
         console.log('Hitted bomb!');
     } else if (!attempts.includes(number)) {
         // Add a different bg-color to the square
@@ -154,10 +155,6 @@ function endGame (bombList, attempts, maxAttempts) {
     for (let i = 0; i < squares.length; i++) {
         const square = squares[i];
         const squareValue  = parseInt(square.innerHTML);
-
-        if (bombList.includes(squareValue)) {
-        square.classList.add('bomb');
-        }
     }
     // Text end game message (if you are the winner)
     let endingMessage = `You won! You guessed the ${maxAttempts} valid attempts. Play again, if you want :)`
