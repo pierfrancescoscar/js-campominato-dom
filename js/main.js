@@ -65,8 +65,9 @@ playBtn.addEventListener('click', () => {
             const square = createGridSquare(squareList, squarePerSide);
             grid.append(square);
             // Gen click event to square
-            square.addEventListener('click', function () {
-                this.classList.add('clicked');
+            square.addEventListener('click', () => {
+                // Click event with apposite function made by us
+                squareClick(square, bombList, attempts, maxAttempts);
             })
         }
 
@@ -117,7 +118,11 @@ function generateBombs(totCells, totBombs) {
     return bombs;
 }
 
+//  Functions - Events on clicking our squares
 
+function squareClick(square, bombList, attempts, maxAttempts) {
+
+}
 
 
 
